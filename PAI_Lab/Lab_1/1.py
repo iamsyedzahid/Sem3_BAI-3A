@@ -11,6 +11,7 @@ for char in password:
         has_letter = True
     if char.isdigit():
         has_number = True
+    if char in "@#$%":
         has_special = True
 
 if has_letter and has_number and has_special:
