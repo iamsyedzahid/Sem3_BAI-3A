@@ -10,4 +10,4 @@ total = super().fare()
 return total + (0.1 * total)
 
 b = Bus(50)
-print("Q1 Bus Fare:", b.fare())
+print("Bus Fare:", b.fare())
