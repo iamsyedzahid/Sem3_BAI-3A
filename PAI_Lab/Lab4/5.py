@@ -13,7 +13,7 @@ self.available = True
 def cost(self, days):
 return self.__price * days
 def details(self):
-print("Q5", self.make, self.model, "Price:", self.__price, "Available:", self.available)
+print(self.make, self.model, "Price:", self.__price, "Available:", self.available)
 
 class Car(VehicleRental):
 pass
