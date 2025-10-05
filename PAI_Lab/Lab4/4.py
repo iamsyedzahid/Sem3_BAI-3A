@@ -1,5 +1,3 @@
-Q4
-
 class Student:
 def init(self, sid, name):
 self.sid = sid
