@@ -1,0 +1,17 @@
+try:
+    name = input("Enter name: ")
+    cnic = input("Enter CNIC: ")
+    age = input("Enter age: ")
+    salary = input("Enter salary: ")
+    f = open("employee.txt", "w")
+    f.write(name + "," + cnic + "," + age + "," + salary)
+    f.close()
+    contact = input("Enter contact number: ")
+    f = open("employee.txt", "a")
+    f.write("," + contact)
+    f.close()
+    f = open("employee.txt", "r")
+    print("File Data:", f.read())
+    f.close()
+except Exception as e:
+    print("Error:", e)
