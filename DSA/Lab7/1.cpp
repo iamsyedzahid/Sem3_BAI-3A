@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -41,10 +40,9 @@ public:
         }
         Node* current = head;
         while (current != nullptr) {
-            cout << "[Name: " << current->name << ", Score: " << current->score << "] -> ";
+            cout << current->name << " " << current->score << endl;
             current = current->next;
         }
-        cout << "NULL" << endl;
     }
 
     void radixSort() {
@@ -121,10 +119,12 @@ public:
 
 int main() {
     LinkedList list;
-    list.insert("Zahid", 78);
-    list.insert("Saad", 95);
-    list.insert("Ahmed", 100);
-    
+    list.insert("Ayan", 90);
+    list.insert("Zameer", 60);
+    list.insert("Sara", 70);
+    list.insert("Sohail", 30);
+    list.insert("Ahmed", 20);
+
     cout << "Original List:" << endl;
     list.display();
 
@@ -137,7 +137,7 @@ int main() {
     string nameToFind;
     int scoreToFind;
 
-    cout << "\nSearch and Delete" << endl;
+    cout << "\nSearch and Delete: " << endl;
     cout << "Enter student name to delete: ";
     getline(cin, nameToFind);
     
