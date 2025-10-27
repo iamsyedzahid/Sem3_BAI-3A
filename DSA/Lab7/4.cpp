@@ -52,12 +52,13 @@ void printArray(Product arr[], int size) {
 
 int main() {
     const int numProducts = 3;
-    Product products[numProducts] = {
-        Product("Laptop", 1200, "High-performance laptop", true),
-        Product("Mouse", 45, "Ergonomic wireless mouse", true),
-        Product("Keyboard", 80, "Mechanical gaming keyboard", false)
-    };
 
+    Product product1 = Product("Laptop", 1200, "High-performance laptop", true);
+    Product product2 = Product("Mouse", 45, "Ergonomic wireless mouse", true);
+    Product product3 = Product("Keyboard", 80, "Mechanical gaming keyboard", false);
+    
+    Product products[numProducts] = {product1, product2, product3};
+    
     cout << "Original Product List:" << endl;
     printArray(products, numProducts);
 
