@@ -1,0 +1,2 @@
+API_KEY=db8934ae-9b98-42a8-875e-9932d709576f
+API_URL=https://api.cricapi.com/v1/currentMatches

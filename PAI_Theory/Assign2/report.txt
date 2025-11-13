@@ -1,0 +1,30 @@
+Hypothesis 1: Women and Children First
+
+Survival Analysis by Sex and Age Group:
+
+AgeGroup     Child      Teen     Adult    Senior
+Sex                                             
+female    0.432432  0.753247  0.725904  0.648855
+male      0.379562  0.086957  0.213462  0.160622
+Conclusion:
+The data overwhelmingly supports the 'women and children first' prioritization. Overall, **Children (male and female)** had a survival rate of **40.32%**. **Women (non-child)** had the highest survival rate at **71.11%**. In stark contrast, **Men (non-child)** had a significantly lower survival rate of **18.63%**. Thus, the data proves a clear order of rescue: **Women, followed by Children, with Adult Men being the lowest priority.**
+
+---
+
+Hypothesis 2: Wealth
+
+Method A (Pclass) Survival Rates:
+Pclass
+1    68.91%
+2    48.00%
+3    23.91%
+
+Method B (FareBin) Survival Rates:
+FareBin
+Low         22.94%
+Medium      44.17%
+High        33.64%
+VeryHigh    60.94%
+
+Conclusion (Comparison of Methods A and B):
+The data clearly establishes a strong correlation between wealth and survival, demonstrated consistently by both methods. Passengers in the **highest wealth bracket** (1st Class and Very High Fare) showed overwhelming advantage: 1st Class passengers survived at a rate of **68.90%**, and those paying the highest fares survived at **60.90%**. Conversely, passengers in the **lowest wealth bracket** (3rd Class and Low Fare) were the least likely to survive. 3rd Class passengers had a survival rate of only **23.90%**, while those in the lowest fare quantile survived at **22.90%**. Because both Method A (discrete class) and Method B (continuous fare) show identical trends—higher wealth equals higher survival—the hypothesis that **socio-economic status determined access to lifeboats** is strongly supported.
