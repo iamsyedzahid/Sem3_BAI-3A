@@ -97,10 +97,10 @@ int main() {
     int initial_size = 5;
     MaxHeap myHeap(initial_arr, initial_size);
 
-    cout << "--- Initial State ---" << endl;
+    cout << "Initial State" << endl;
     myHeap.display();
 
-    cout << "\n--- update_key Demo ---" << endl;
+    cout << "\n update_key Demo" << endl;
     myHeap.update_key(3, 10);
     cout << "After update (HeapifyUp):" << endl;
     myHeap.display();
@@ -109,7 +109,7 @@ int main() {
     cout << "After update (MaxHeapify):" << endl;
     myHeap.display();
 
-    cout << "\n--- deleteMax Demo ---" << endl;
+    cout << "\n deleteMax Demo" << endl;
     myHeap.deleteMax();
     cout << "After deleteMax:" << endl;
     myHeap.display();
