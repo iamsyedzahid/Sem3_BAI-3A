@@ -1,52 +1,86 @@
 #include <iostream>
-#include <cstring>
 #include <string>
+#include <cstring>
+
 using namespace std;
 
-#define tableSize 10
-struct Node
-{
-    char key;
+struct Node {
+    string key;
     string value;
     Node* next;
+
+    Node(const string& k, const string& v) : key(k), value(v), next(nullptr) {}
 };
-Node* arr[tableSize];
 
-int hashFunction(int sum){
-    return sum%tableSize;
-}
+class HashTable {
+private:
+    static const int tableSize = 10;
+    Node* arr[tableSize];
 
-int sumStr(string key){
-    int sum = 0;
-    int len = key.length();
-    char arr[len+1];
-    strcpy(arr, key.c_str());
-    for (int i = 0; i < len; i++)
-    {
-        sum += arr[i];
+    int sumStr(const string& key) const {
+        int sum = 0;
+        int len = key.length();
+        char c_arr[len + 1]; 
+        strcpy(c_arr, key.c_str()); 
+        for (int i = 0; i < len; i++) {
+            sum += c_arr[i];
+        }
+        return sum;
     }
-    return sum;
-}
-int size = 0;
 
-void insert(char key, string value){
-    int hashIndex = hashFunction(sumStr(value));
+    int hashFunction(int sum) const {
+        return sum % tableSize;
+    }
+
+public:
+    HashTable() {
+        for (int i = 0; i < tableSize; i++) {
+            arr[i] = nullptr;
+        }
+    }
+
+    ~HashTable() {
+        for (int i = 0; i < tableSize; i++) {
+            Node* current = arr[i];
+            while (current != nullptr) {
+                Node* next = current->next;
+                delete current;
+                current = next;
+            }
+            arr[i] = nullptr;
+        }
+    }
     
-    Node* newNode = new Node;
-    newNode->key = key;
-    newNode->value = value;
+    void insert(const string& key, const string& value) {
+        int hashIndex = hashFunction(sumStr(key));
+        
+        Node* current = arr[hashIndex];
+        while (current != nullptr) {
+            if (current->key == key) {
+                cout << "Updating key '" << key << "' from '" << current->value << "' to '" << value << "'." << endl;
+                current->value = value;
+                return;
+            }
+            current = current->next;
+        }
+
+        Node* newNode = new Node(key, value);
+        
+        newNode->next = arr[hashIndex];
+        arr[hashIndex] = newNode;
+
+        cout << "Inserted/Updated: (" << key << ", " << value << ") at index " << hashIndex << endl;
+    }
+};
+
+int main() {
     
-    newNode->next = arr[hashIndex];
-    arr[hashIndex] = newNode;
-}
+    HashTable myhash;
 
-int main(){
-    int nsum = sumStr("Zahid");
-    int index = hashFunction(nsum);
-    // cout << index<< endl;
-    // cout << nsum;
-
-    insert('a', "zahid");
-
+    cout << "--- Insertion Operations ---" << endl;
+    myhash.insert("A", "aaaaa");
+    myhash.insert("B", "bbbbb");
+    myhash.insert("C", "ccccc");
+    
     return 0;
 }
