@@ -20,8 +20,8 @@ private:
     int sumStr(const string& key) const {
         int sum = 0;
         int len = key.length();
-        char c_arr[len + 1]; 
-        strcpy(c_arr, key.c_str()); 
+        char c_arr[len + 1];
+        strcpy(c_arr, key.c_str());
         for (int i = 0; i < len; i++) {
             sum += c_arr[i];
         }
@@ -81,6 +81,5 @@ int main() {
     myhash.insert("A", "aaaaa");
     myhash.insert("B", "bbbbb");
     myhash.insert("C", "ccccc");
-    
     return 0;
 }
