@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, precision_score
 import matplotlib.pyplot as plt
 
-df5 = pd.read_csv(train.scv)
+df5 = pd.read_csv('train.csv')
 
 df5['Age'].fillna(df5['Age'].mean(), inplace=True)
 
