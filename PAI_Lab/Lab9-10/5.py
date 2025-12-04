@@ -5,19 +5,7 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, precision_score
 import matplotlib.pyplot as plt
 
-print("\n--- Task 5: Decision Tree Classification (Titanic - Simulated Data) ---")
-print("Note: The 'titanic_dataset.csv' file was not found, so the task proceeds with simulated data as provided in the initial prompt structure.")
-
-np.random.seed(42)
-N = 100
-df5 = pd.DataFrame({
-    'Pclass': np.random.randint(1, 4, N),
-    'Sex': np.random.randint(0, 2, N),
-    'Age': np.random.uniform(10, 80, N),
-    'Fare': np.random.uniform(10, 500, N),
-    'Survived': np.random.randint(0, 2, N)
-})
-df5.loc[df5.sample(frac=0.1).index, 'Age'] = np.nan
+df = pd.read_csv(train.scv)
 
 df5['Age'].fillna(df5['Age'].mean(), inplace=True)
 
