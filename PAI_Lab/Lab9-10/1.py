@@ -17,7 +17,6 @@ model1.fit(X, y)
 intercept = model1.intercept_
 slope = model1.coef_[0]
 
-print("--- Q1 Results ---")
 print(f"Estimated Intercept (β₀): {intercept:.2f} thousand")
 print(f"Estimated Slope (β₁): {slope:.2f} thousand/year")
 
